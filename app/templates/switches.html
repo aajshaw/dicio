@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Defined switches</h1>
+    <table>
+      {% for switch in switches %}
+      <tr>
+        <td>
+          {{ switch.description }}
+        </td>
+        <td>
+          {{ switch.switch_id }}
+        </td>
+        <td>
+          edit and delete link here
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

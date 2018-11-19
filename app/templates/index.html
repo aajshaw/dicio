@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>Available switches</h1>
+      </div>
+    </div>
+    <table class="table">
+      <tr>
+        <th>Switch</th>
+        <th>On</th>
+        <th>Off</th>
+      </tr>
+      <tr>
+        <td>All</td>
+        <td>
+          <span onclick="allOn()"><i class="fas fa-toggle-on"></i></span>
+        </td>
+        <td>
+          <span onclick="allOff()"><i class="fas fa-toggle-off"></i></span>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      {% for switch in switches %}
+      <tr>
+        <td>
+          {{ switch.description }}
+        </td>
+        <td>
+          <span onclick="turnOn({{ switch.id }})"><i class="fas fa-toggle-on"></i></span>
+        </td>
+        <td>
+          <span onclick="turnOff({{ switch.id }})"><i class="fas fa-toggle-off"></i></span>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}
